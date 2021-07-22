@@ -7,8 +7,7 @@ const main = async () => {
 
     do {
         opt = await showMenu()
-        console.log({ opt })
-        await pause()
+        if (opt !== '0') await pause()
     } while (opt !== '0')
 }
 

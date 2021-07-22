@@ -52,5 +52,5 @@ const pause = () => {
 
 module.exports = {
     showMenu,
-    pause,
+    pause
 }
