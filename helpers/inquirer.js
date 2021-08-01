@@ -40,16 +40,29 @@ const preguntas = [
 ]
 
 const inquirerMenu = async () => {
-    //console.clear()
+    console.clear()
     console.log('==========================='.green)
     console.log('   Seleccione una opción  '.green)
     console.log('===========================\n'.green)
 
-    const opt = await inquirer.prompt(preguntas)
-    return opt
+    const { opcion } = await inquirer.prompt(preguntas)
+    return opcion
+}
+
+const pausa = async () => {
+    const pauseElement = [
+        {
+            type: 'input',
+            name: 'keyPressed',
+            message: `Presiona ${'ENTER'.green} para continuar.`,
+        },
+    ]
+
+    console.log('\n')
+    await inquirer.prompt(pauseElement)
 }
 
 module.exports = {
     inquirerMenu,
+    pausa,
 }
-º
