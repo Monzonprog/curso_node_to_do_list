@@ -59,6 +59,12 @@ class Tareas {
         const tarea = new Tarea(desc)
         this._listado[tarea.id] = tarea
     }
+
+    borrarTarea(id = '') {
+        if (this._listado[id]) {
+            delete this._listado[id]
+        }
+    }
 }
 
 module.exports = Tareas
