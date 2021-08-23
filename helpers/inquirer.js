@@ -94,9 +94,23 @@ const leerInput = async (message) => {
     return desc
 }
 
+const confirmar = async (message) => {
+    const question = [
+        {
+            type: 'confirm',
+            name: 'ok',
+            message,
+        },
+    ]
+
+    const { ok } = await inquirer.prompt(question)
+    return ok
+}
+
 module.exports = {
     inquirerMenu,
     pausa,
     leerInput,
     listadoTareasBorrar,
+    confirmar,
 }
